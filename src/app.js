@@ -9,7 +9,7 @@
 var ajax = require('ajax');
 
 var UI = require('ui');
-var Vector2 = require('vector2');
+//var Vector2 = require('vector2');
 
 var main = new UI.Card({
   title: 'Pebble.js',
@@ -41,7 +41,7 @@ ajax(
     
       var detailCard = new UI.Card({
         subtitle: "Question was:",
-        body: data //options[event.itemIndex].body <- event not defined here, so pick a working body attr
+        body: status //options[event.itemIndex].body <- event not defined here, so pick a working body attr
   
       });
       
@@ -82,12 +82,14 @@ var optionsMenu = new UI.Menu({
 /* Show the menu */
 optionsMenu.show();
 
+
 /* Show detailed menu when clicked */
 optionsMenu.on('select', function(event) {
   // Send out data to server
   
   var objectData =
-         { //something here        
+         { 
+           //something here        
          };
 
 var objectDataString = JSON.stringify(objectData);
@@ -107,11 +109,13 @@ var objectDataString = JSON.stringify(objectData);
   });
   
     var thankYou = new UI.Card({
-      title: 'Thanks for Voting',
+      title: ' Pebble.js',
       icon: 'images/menu_icon.png',
+      body: 'Thanks for Voting',
     });
-      thankYou.show();
-]});
+    thankYou.show();
+});
+
 
 
 
